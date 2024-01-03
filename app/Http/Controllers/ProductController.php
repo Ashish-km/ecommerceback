@@ -28,5 +28,13 @@ class ProductController extends Controller
     $p->desc=$request->desc;
     $p->image=$request->image;
     $p->save();
-}
+
+    $url="http://localhost:8000/storage/";
+    $file $request->file(key: 'image');
+    Sextension $file->getClientOriginalExtension();
+    $path = $request->file( key: 'image')->storeAs(path: 'proimages/', name: $p->id.'.'.Sextension);
+    $p->image-Spath;
+    $p->imgpath=Surl.$path;
+    $p->save();
+} 
 }
