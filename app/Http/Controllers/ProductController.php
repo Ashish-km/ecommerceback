@@ -33,8 +33,8 @@ class ProductController extends Controller
     $file = $request->file(key: 'image');
     $extension = $file->getClientOriginalExtension();
     $path = $request->file( key: 'image')->storeAs(path: 'proimages/', name: $p->id.'.'.$extension);
-    $p->image-Spath;
-    $p->imgpath=Surl.$path;
+    $p->image-$path;
+    $p->imgpath=$url.$path;
     $p->save();
 }
 }
