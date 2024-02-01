@@ -19,7 +19,7 @@ class ProductController extends Controller
          'price' => 'requird',
     ]);
 
-    if ($validator  -> fails()){
+    if ($validator  -> fails()){    
         return response()-> json(['error'=>$validator->errors()->all()],status:409);
     }
     $p =new product();
@@ -52,7 +52,7 @@ class ProductController extends Controller
         if ($validator->fails()){
             return response()-> json(['error'=>$validator->errors()->all()],status:409);
         }
-        $p =product::find($request->id);
+        $p = product::find($request->id);
         $p->name=$request->name;
         $p->category=$request->category;
         $p->brand=$request->brand;
